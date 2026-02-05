@@ -142,3 +142,23 @@ public class Test {
     Both point to same object
     So b.value = 50 changes the same object
     ✔ Looks like pass by reference, but actually it’s pass by value of reference
+
+
+# Searching in Arrays
+    Searching means finding a given element in an array.
+    There are two main searching methods:
+    ✅ Linear Search
+    ✅ Binary Search
+
+## 1️⃣ Linear Search
+    📌 What is Linear Search?
+    In Linear Search, we check each element one by one from the start of the array until:
+    The element is found, or
+    The array ends.
+    It is simple but slow for large arrays.
+
+## ⏱ Time Complexity
+    Best case: O(1)
+    Worst case: O(n)
+    Average case: O(n)
+
