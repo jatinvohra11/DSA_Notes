@@ -85,3 +85,60 @@ In Java, array has a length property:
     Find missing number
     Linear search / Binary search
     Prefix sum problems
+
+# 16 Pass by Value
+## Definition:
+    When you pass a copy of a variable’s value to a method, it is called pass by value.
+    Changes made inside the method do not affect the original variable.
+
+## In Java:
+    Java is always pass by value.
+    Even for objects, Java passes the copy of the reference, not the original variable itself.
+
+## Example:
+    public class Test {
+    static void change(int x) {
+        x = 50;
+    }
+
+    public static void main(String[] args) {
+        int a = 10;
+        change(a);
+        System.out.println(a);  // Output: 10
+    }
+}
+
+## Explanation:
+    a = 10
+    change(a) → copy of a goes to x
+    x becomes 50, but a is still 10
+    ✔ Original value does not change
+
+## Then why objects change in Java?
+    Because Java passes a copy of the reference (address) to the object.
+
+## Example :
+class Box {
+    int value;
+}
+
+public class Test {
+    static void change(Box b) {
+        b.value = 50;
+    }
+
+    public static void main(String[] args) {
+        Box obj = new Box();
+        obj.value = 10;
+
+        change(obj);
+        System.out.println(obj.value);  // Output: 50
+    }
+}
+
+# Explanation:
+    obj has a reference to Box object
+    A copy of that reference goes to b
+    Both point to same object
+    So b.value = 50 changes the same object
+    ✔ Looks like pass by reference, but actually it’s pass by value of reference
